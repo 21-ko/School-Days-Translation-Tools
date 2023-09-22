@@ -26,7 +26,7 @@ try:
         file_name = file_element.get("name")
 
         # 파일 경로 조합
-        file_path = os.path.join(folder_name, file_name)
+        file_path = os.path.join("Script", folder_name, file_name)
 
         # 파일 열기
         with open(file_path, "r", encoding="sjis") as file:
@@ -99,8 +99,8 @@ try:
                     set_select_start = set_select_end  # 다음 탐색을 위해 시작 위치 갱신
 
             # 수정된 내용을 새 파일에 저장
-            new_file_name = "new_" + file_name  # 새 파일 이름
-            new_file_path = os.path.join(folder_name, new_file_name)
+            new_file_name = file_name  # 새 파일 이름
+            new_file_path = os.path.join("New", folder_name, new_file_name)
             with open(new_file_path, "w", encoding="utf-8-sig") as new_file:
                 new_file.write(file_contents)
 
