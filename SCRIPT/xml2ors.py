@@ -29,7 +29,7 @@ try:
         file_path = os.path.join("Script", folder_name, file_name)
 
         # 파일 열기
-        with open(file_path, "r", encoding="sjis") as file:
+        with open(file_path, "r", encoding="utf-8-sig") as file:
             file_contents = file.read()
 
             # "[PrintText]"로 둘러싸인 문자열 찾기
@@ -100,7 +100,12 @@ try:
 
             # 수정된 내용을 새 파일에 저장
             new_file_name = file_name  # 새 파일 이름
+            new_folder_path = os.path.join("New", folder_name)
             new_file_path = os.path.join("New", folder_name, new_file_name)
+            
+            if new_folder_path and not os.path.exists(new_folder_path):
+                os.makedirs(new_folder_path)
+            
             with open(new_file_path, "w", encoding="utf-8-sig") as new_file:
                 new_file.write(file_contents)
 
