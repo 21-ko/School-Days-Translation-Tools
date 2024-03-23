@@ -29,7 +29,7 @@ try:
         file_path = os.path.join("Script", folder_name, file_name)
 
         # 파일 열기
-        with open(file_path, "r", encoding="utf-8-sig") as file:
+        with open(file_path, "r", encoding="sjis") as file:
             file_contents = file.read()
 
             # "[PrintText]"로 둘러싸인 문자열 찾기
