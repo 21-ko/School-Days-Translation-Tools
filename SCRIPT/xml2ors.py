@@ -1,6 +1,6 @@
 import sys
-import xml.etree.ElementTree as ET
 import os
+import xml.etree.ElementTree as ET
 
 if len(sys.argv) != 2:
     print("Enter an XML file to use it.")
