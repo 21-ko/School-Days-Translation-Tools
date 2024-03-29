@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import sys
+import os
 import json
 
 bitmap_size = (48, 48)
@@ -84,8 +85,8 @@ def create_and_combine_bitmap_font(characters, font_path, output_file):
 # 실행
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        #print("Usage: <program_name> <json_file>")
         print("Wrong execution: Drag and drop the JSON file to run it.")
+        os.system("pause")
         sys.exit(1)
 
     json_file_path = sys.argv[1]
